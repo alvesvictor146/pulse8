@@ -1,0 +1,35 @@
+# ==========================================
+# PULSE8 — FIREBASE APP HOSTING CONFIGURATION
+# Homologação & Produção para Next.js 14 App Router
+# ==========================================
+kind: "AppHostingYaml"
+schemaVersion: "v1"
+
+# Configuração de Recursos do Container
+runConfig:
+  minInstances: 0
+  maxInstances: 5
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 1024
+
+# Variáveis de Ambiente
+env:
+  - variable: NODE_ENV
+    value: "production"
+
+  - variable: NEXTAUTH_URL
+    value: "https://pulse8-homolog.web.app"
+
+  # Chaves Secretas (gerenciadas via Google Cloud Secret Manager / Firebase Console)
+  - variable: NEXTAUTH_SECRET
+    secret: NEXTAUTH_SECRET
+
+  - variable: DATABASE_URL
+    secret: DATABASE_URL
+
+  - variable: HMAC_SECRET
+    secret: HMAC_SECRET
+
+  - variable: SYMPLA_WEBHOOK_SECRET
+    secret: SYMPLA_WEBHOOK_SECRET

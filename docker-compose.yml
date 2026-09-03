@@ -1,0 +1,41 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: pulse8_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: pulse8_user
+      POSTGRES_PASSWORD: pulse8_secure_password_2026
+      POSTGRES_DB: pulse8_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pulse8_user -d pulse8_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pulse8_app
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://pulse8_user:pulse8_secure_password_2026@postgres:5432/pulse8_db?schema=public
+      NEXTAUTH_URL: http://localhost:3000
+      NEXTAUTH_SECRET: pulse8_production_jwt_secret_key_2026_super_secure
+      HMAC_SECRET: pulse8_qr_hmac_secret_key_production_2026
+      SYMPLA_WEBHOOK_SECRET: pulse8_sympla_webhook_secret_2026
+
+volumes:
+  postgres_data:
+    driver: local

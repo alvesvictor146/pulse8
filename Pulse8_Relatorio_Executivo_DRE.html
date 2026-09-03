@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Pulse8 — Relatório Executivo Oficial & DRE</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #ffffff; color: #1e293b; padding: 36px; max-width: 920px; margin: auto; }
+    @media print {
+      body { padding: 16px; }
+      .no-print { display: none !important; }
+      @page { margin: 12mm; size: A4; }
+    }
+    .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #e2e8f0; padding-bottom: 20px; margin-bottom: 24px; }
+    .logo-badge { display: inline-flex; align-items: center; gap: 8px; background: #4c6ef5; color: white; padding: 6px 14px; border-radius: 8px; font-weight: 800; font-size: 14px; }
+    .org-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; font-weight: 700; margin-top: 6px; }
+    .title { font-size: 26px; font-weight: 800; color: #0f172a; margin-top: 4px; }
+    .meta { font-size: 12px; color: #64748b; margin-top: 4px; }
+    
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+    .kpi-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; text-align: center; }
+    .kpi-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; }
+    .kpi-value { font-size: 18px; font-weight: 800; color: #0f172a; margin-top: 4px; font-family: 'JetBrains Mono', monospace; }
+    .text-emerald { color: #059669 !important; }
+    .text-rose { color: #e11d48 !important; }
+    .text-brand { color: #4c6ef5 !important; }
+
+    .section { margin-bottom: 24px; }
+    .section-title { font-size: 14px; font-weight: 800; color: #0f172a; border-left: 4px solid #4c6ef5; padding-left: 8px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+    
+    table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 16px; }
+    th { background: #f1f5f9; color: #334155; font-weight: 700; text-align: left; padding: 8px 12px; border-bottom: 1px solid #cbd5e1; }
+    td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; }
+    .text-right { text-align: right; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+    .footer-sign { margin-top: 48px; padding-top: 24px; border-top: 1px dashed #cbd5e1; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .sign-line { border-top: 1px solid #64748b; padding-top: 6px; text-align: center; font-size: 11px; color: #475569; font-weight: 600; }
+    
+    .btn-print { background: #4c6ef5; color: white; border: none; padding: 12px 24px; font-size: 14px; font-weight: 700; border-radius: 8px; cursor: pointer; float: right; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(76, 110, 245, 0.25); transition: background 0.2s; }
+    .btn-print:hover { background: #3b5bdb; }
+  </style>
+</head>
+<body>
+  <div class="no-print" style="overflow: hidden; margin-bottom: 16px;">
+    <button class="btn-print" onclick="window.print()">🖨️ Salvar como PDF / Imprimir Relatório</button>
+  </div>
+
+  <div class="header">
+    <div>
+      <div class="logo-badge">PULSE8 · RELATÓRIO EXECUTIVO OFICIAL</div>
+      <div class="org-title">Pulse8 Entertainment & Event Management</div>
+      <h1 class="title">Festival Pulsar 2026 — Demonstração Consolidada</h1>
+      <div class="meta">
+        Arena Festival São Paulo · SP | Gerado em: 03/09/2026 às 08:03 | Status: Homologado
+      </div>
+    </div>
+  </div>
+
+  <!-- KPI Cards -->
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Faturamento Bruto</div>
+      <div class="kpi-value text-emerald">R$ 1.180.000,00</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Custos Operacionais</div>
+      <div class="kpi-value text-rose">R$ 380.000,00</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Lucro Líquido</div>
+      <div class="kpi-value text-emerald">R$ 800.000,00</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Margem de Lucro</div>
+      <div class="kpi-value text-brand">67.8%</div>
+    </div>
+  </div>
+
+  <!-- Demonstrativo DRE -->
+  <div class="section">
+    <div class="section-title">Demonstrativo de Resultado do Exercício (DRE)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Conta / Rubrica</th>
+          <th>Classificação Contábil</th>
+          <th class="text-right">Valor Consolidado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>(+) Receita Bruta de Ingressos (Sympla & Vendas Diretas)</strong></td>
+          <td>Receitas Operacionais</td>
+          <td class="text-right font-mono text-emerald">R$ 1.050.000,00</td>
+        </tr>
+        <tr>
+          <td><strong>(+) Receita de Consumo de Bar & Alimentos</strong></td>
+          <td>Receitas Operacionais</td>
+          <td class="text-right font-mono text-emerald">R$ 130.000,00</td>
+        </tr>
+        <tr>
+          <td><strong>(-) Custos Fixos (Locação de Espaço, Palco, Luz & Som)</strong></td>
+          <td>Despesas de Infraestrutura</td>
+          <td class="text-right font-mono text-rose">R$ 250.000,00</td>
+        </tr>
+        <tr>
+          <td><strong>(-) Custos Variáveis (Segurança, Limpeza, Taxas ECAD & Licenças)</strong></td>
+          <td>Despesas Operacionais</td>
+          <td class="text-right font-mono text-rose">R$ 130.000,00</td>
+        </tr>
+        <tr>
+          <td><strong>(-) Comissões de Promoters & Afiliados (UTM Links)</strong></td>
+          <td>Custo de Aquisição (CAC)</td>
+          <td class="text-right font-mono text-rose">R$ 45.000,00</td>
+        </tr>
+        <tr style="background: #f8fafc; font-weight: 800; font-size: 13px;">
+          <td><strong>(=) RESULTADO LÍQUIDO DO EVENTO</strong></td>
+          <td>Lucro Líquido Final (Margem: 67.8%)</td>
+          <td class="text-right font-mono text-emerald">R$ 800.000,00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Detalhamento de Fornecedores -->
+  <div class="section">
+    <div class="section-title">Principais Contratos & Fornecedores Homologados</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Fornecedor / Razão Social</th>
+          <th>Serviço / Categoria</th>
+          <th>Status</th>
+          <th class="text-right">Valor Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Stage Master Som & Luz Ltda</td>
+          <td>Sonorização & Iluminação Principal</td>
+          <td>Pago</td>
+          <td class="text-right font-mono">R$ 120.000,00</td>
+        </tr>
+        <tr>
+          <td>Arena Eventos SP S/A</td>
+          <td>Locação do Espaço & Estacionamento</td>
+          <td>Pago</td>
+          <td class="text-right font-mono">R$ 80.000,00</td>
+        </tr>
+        <tr>
+          <td>Guarda Real Segurança Privada</td>
+          <td>Efetivo de 30 Seguranças & Brigadistas</td>
+          <td>Pago</td>
+          <td class="text-right font-mono">R$ 35.000,00</td>
+        </tr>
+        <tr>
+          <td>Geradores PowerMax 250kVA</td>
+          <td>Locação de Geradores & Combustível</td>
+          <td>Pago</td>
+          <td class="text-right font-mono">R$ 15.000,00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Métricas de Portaria PWA Offline -->
+  <div class="section">
+    <div class="section-title">Estatísticas de Portaria & Presença (PWA Check-in)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Total Ingressos Emitidos</th>
+          <th>Check-ins Validados</th>
+          <th>Taxa de No-Show</th>
+          <th class="text-right">Índice de Presença</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="font-mono">5.000 convidados</td>
+          <td class="font-mono text-emerald">4.620 validados</td>
+          <td class="font-mono text-rose">380 ausentes (7.6%)</td>
+          <td class="text-right font-mono font-bold text-emerald">92.4%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Signatures -->
+  <div class="footer-sign">
+    <div class="sign-line">
+      Diretor Financeiro & Produtor Geral
+    </div>
+    <div class="sign-line">
+      Auditoria Executiva Pulse8
+    </div>
+  </div>
+</body>
+</html>
