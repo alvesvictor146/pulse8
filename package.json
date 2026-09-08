@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && next build",
+    "deploy": "npx gh-pages -d out -b gh-pages --dotfiles",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
