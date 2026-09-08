@@ -56,13 +56,19 @@ EP-13: Integrações (Sympla, Gateways PIX & Webhooks)
 
 ### 🎪 EP-03: Módulo de Eventos, Setores & Lotes
 
-#### US-04: Cadastro e Edição de Evento
+#### US-04: Cadastro e Listagem Dinâmica de Eventos com Feedback Visual [CONCLUÍDO]
 * **Como** gestor de produção,
-* **Quero** cadastrar um evento informando nome, data, local, capacidade total, tema e banner,
-* **Para que** eu possa gerenciar a operação do evento centralizadamente.
-* **Critérios de Aceitação:**
-  - Suportar status do evento: `Rascunho`, `Planejamento`, `Vendas Abertas`, `Finalizado`.
-  - Permitir upload de imagem de capa.
+* **Quero** cadastrar um evento informando nome, data, local, capacidade total, tema e banner, e ter retorno visual imediato se foi salvo com sucesso ou com erro,
+* **Para que** eu possa gerenciar a operação do evento centralizadamente e acompanhar a listagem em tempo real.
+* **Critérios de Aceitação & Entregas Concluídas:**
+  - [x] Suportar status do evento: `Rascunho`, `Planejamento`, `Vendas Abertas`, `Finalizado`.
+  - [x] Permitir input de URL de imagem de capa e metadados.
+  - [x] **Card de Notificação Visual (Feedback UI):**
+    - 🟢 Banner verde de sucesso com badge de confirmação e redirecionamento suave em 1.8s.
+    - 🟡 Modo Demonstração com fallback local para testes sem sessão ativa.
+    - 🔴 Banner vermelho com detalhamento amigável de erros de validação sem perda de dados.
+  - [x] **Listagem Dinâmica:** Conexão com a API real `/api/events` e atualização instantânea da Grade e Lista.
+  - [x] **Persistência PostgreSQL:** 22 tabelas criadas no Neon.tech e seed executado.
 
 #### US-05: Gestão de Setores / Áreas e Lotes de Ingressos
 * **Como** gestor de vendas,

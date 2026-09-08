@@ -44,18 +44,32 @@
 ---
 
 ### 🎟️ ETAPA 2: Gestão de Eventos & Orçamento Financeiro
-* **Objetivo:** Permitir cadastro de eventos e controle financeiro (Previsto x Realizado / DRE).
-* **Status:** **Em Andamento**
-* **Tarefas:**
-  - [ ] **Módulo de Eventos:**
-    - Listagem de Eventos com alternância Grid / Lista.
-    - Formulário estruturado de Criação/Edição de Eventos (áreas, capacidade, lotes de ingressos, tema, datas).
-    - Tela de Detalhes do Evento com tabs operacionais.
+* **Objetivo:** Permitir cadastro de eventos, feedback visual em tempo real e controle financeiro (Previsto x Realizado / DRE).
+* **Status:** **80% Concluído (Eventos 100% / Financeiro e Sympla em andamento)**
+* **Tarefas Concluídas:**
+  - [x] **Módulo de Eventos & Feedback Visual:**
+    - [x] Listagem de Eventos com alternância Grid / Lista conectada dinamicamente à API `/api/events` e cache local.
+    - [x] Formulário estruturado de Criação de Eventos (`/eventos/novo`) com campos completos de tema, capacidade, local, datas e imagem de capa.
+    - [x] **Card de Notificação Visual (Feedback UI):**
+      - 🟢 Sucesso: Banner verde animado com badge "Salvo com Sucesso" e redirecionamento suave em 1.8s.
+      - 🟡 Modo Demonstração: Armazena localmente e exibe aviso caso não haja sessão de login ativa.
+      - 🔴 Erro: Card vermelho detalhando inconsistências ou erros de validação sem perder campos digitados.
+  - [x] **Infraestrutura de Homologação & Nuvem (Custo R$ 0,00):**
+    - [x] Migração do Prisma para **PostgreSQL** com suporte a conexões pooler (`DATABASE_URL`) e diretas (`directUrl`).
+    - [x] Provisionamento do banco de dados na **Neon.tech** (Região: São Paulo AWS `sa-east-1`).
+    - [x] Criação das 22 tabelas relacionais e execução do script de seed (`admin@pulse8.com.br` / `Pulse8@2026!`).
+    - [x] Integração do **Firebase MCP**: Web App registrado, arquivos `.firebaserc`, `firebase.json` e `apphosting.yaml` configurados.
+    - [x] Limpeza e saneamento do repositório GitHub (`alvesvictor146/pulse8`) com `.gitignore` adequado.
+    - [x] Guia operacional completo de deploy documentado em `docs/GUIA_DEPLOY_FIREBASE.md`.
+
+* **Próximas Tarefas da Etapa 2 (Em Andamento):**
+  - [ ] Conclusão do deploy automático no Firebase App Hosting e apontamento CNAME no cPanel da HostGator.
+  - [ ] Tela de Detalhes do Evento (`/eventos/[id]`) com tabs operacionais e lotes de ingressos.
   - [ ] **Módulo Financeiro & Orçamento:**
-    - Dashboard Financeiro com comparativo de Orçamento vs. Despesas.
-    - Gestão de Despesas com categorias, fornecedores, vencimento, comprovante e chave PIX.
-    - Gestão de Receitas e conciliação.
-    - Parser inicial para **importação de relatórios de vendas do Sympla (CSV)**.
+    - [ ] Dashboard Financeiro com comparativo de Orçamento vs. Despesas.
+    - [ ] Gestão de Despesas com categorias, fornecedores, vencimento, comprovante e chave PIX.
+    - [ ] Gestão de Receitas e conciliação.
+    - [ ] Parser inicial para **importação de relatórios de vendas do Sympla (CSV)**.
 
 ---
 

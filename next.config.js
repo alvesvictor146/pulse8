@@ -35,9 +35,19 @@ const securityHeaders = [
   },
 ];
 
+const isProd = process.env.NODE_ENV === 'production';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || (isProd ? '/pulse8' : '');
+
 const nextConfig = {
+  output: 'export',
+  basePath: basePath,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
+  images: {
+    unoptimized: true,
+  },
   reactStrictMode: true,
 
+  /*
   async headers() {
     return [
       {
@@ -47,6 +57,7 @@ const nextConfig = {
       },
     ];
   },
+  */
 
   // Silenciar avisos de pacotes externos no bundle
   webpack: (config, { isServer }) => {
